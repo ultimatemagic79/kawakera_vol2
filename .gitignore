@@ -5,8 +5,6 @@ out/
 .env.prod
 
 
-# ignore static files
-static/
 # ignore migration files
 migrations/
 
