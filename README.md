@@ -3,6 +3,11 @@
 ![](docs/img/summary.png)
 
 
+# .envファイルの作成
+- .env.exampleを複製して.envという名前に変える
+- POSTGRESという名前がついた環境変数はすべてpostgresという名前に設定する
+- SECRET_KEYを設定する
+
 ## SECRET_KEYを生成する方法
 
 ```
