@@ -1,0 +1,13 @@
+{
+	"name": "Django Tutorial",
+	// Dockerfileでイメージ・コンテナを作成
+	"dockerComposeFile": "../docker-compose.yml",
+	// VS Codeのワークスペースフォルダ
+	"workspaceFolder": "/work",
+	// 使用するサービス
+	"service": "django",
+	// リモート先のVS Codeにインストールする拡張機能
+	"extensions": [
+		"ms-python.python"
+	]
+}
