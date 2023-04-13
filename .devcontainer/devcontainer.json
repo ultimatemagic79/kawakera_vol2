@@ -1,5 +1,5 @@
 {
-	"name": "Django Tutorial",
+	"name": "Django Kawakera",
 	// Dockerfileでイメージ・コンテナを作成
 	"dockerComposeFile": "../docker-compose.yml",
 	// VS Codeのワークスペースフォルダ
