@@ -3,6 +3,7 @@ out/
 .DS_Store
 .env
 .env.prod
+node_modules/
 media/
 
 # ignore migration files
