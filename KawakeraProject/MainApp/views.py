@@ -36,10 +36,12 @@ class IndexView(generic.FormView):
         # input = form["nanka"]
         # img -> clip
         # context = clip
+        context = image2text()
 
         # for
         # context -> chat
         # responses = chat
+        knowledge = chat_knowledge(context)
 
         # responses -> result
         # セッションにresponsesを保存する
