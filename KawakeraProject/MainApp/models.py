@@ -16,7 +16,8 @@ class MainApp(models.Model):
 
 class Result(models.Model):
     "リザルト画面のモデル"
-    photo = models.TextField(verbose_name="画像ファイル名")
+    photo_name = models.TextField(verbose_name="画像ファイル名")
+    name = models.TextField(verbose_name="動物名")
     area = models.TextField(verbose_name="住んでるとこ")
     mame = models.TextField(verbose_name="豆知識")
     food = models.TextField(verbose_name="食べるもの")
