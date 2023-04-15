@@ -31,8 +31,7 @@ class IndexView(generic.FormView):
 
     def form_valid(self, form):
         photo = form.cleaned_data['photo']
-        
-        # self.request.session['photo'] = photo
+        self.request.session['photo_name'] = photo.name
         form.save()
         # input = form["nanka"]
         # img -> clip
@@ -44,6 +43,15 @@ class IndexView(generic.FormView):
 
         # responses -> result
         # セッションにresponsesを保存する
+        
+        a = {"name": "ぱんだ", "area": "中国", "food": "笹"}
+        name = a["name"]
+        area = a["area"]
+        food = a["food"]
+        self.request.session['name'] = name
+        self.request.session['area'] = area
+        self.request.session['food'] = food
+        
         messages.success(self.request, "解説を生成しました")
         return super().form_valid(form)
 
@@ -58,21 +66,18 @@ class ResultView(generic.TemplateView):
     # responses -> template
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["my_variable"] = "Hello, World!"
-        # context["my_photo"] = self.request.session.get('photo')
+        self.photo_name = self.request.session.get('photo_name')
+        self.name = self.request.session.get('name')
+        self.area = self.request.session.get('area')
+        self.food = self.request.session.get('food')
+        
+        context["photo_name"] = self.photo_name
+        context["name"] = self.name
+        context["area"] = self.area
+        context["food"] = self.food
+        
+        self.request.session.pop('photo_name')
+        self.request.session.pop('name')
+        self.request.session.pop('area')
+        self.request.session.pop('food')
         return context
-
-    # def show_image(self, request):
-    #     photo = self.request.session.get('photo')
-    #     if photo:
-    #         if request.session.get('image_format') == 'jpeg':
-    #             content_type = 'image/jpeg'
-    #         elif request.session.get('image_format') == 'png':
-    #             content_type = 'image/png'
-    #         elif request.session.get('image_format') == 'jpg':
-    #             content_type = 'image/jpg'
-    #         else:
-    #             content_type = 'application/octet-stream'
-    #         return HttpResponse(photo, content_type=content_type)
-    #     else:
-    #         return HttpResponse('Image not found')
