@@ -1,5 +1,4 @@
 import logging
-import tempfile
 
 from django.shortcuts import render
 from django.views import generic
@@ -7,6 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 
 from .forms import CommentCreateForm
+from .models import Result
 
 logger = logging.getLogger(__name__)
 
@@ -27,10 +27,16 @@ class IndexView(generic.FormView):
     success_url = reverse_lazy("MainApp:result")
 
     def form_valid(self, form):
+        form.save()
         messages.success(self.request, "解説を生成しました")
         return super().form_valid(form)
 
 
 class ResultView(generic.TemplateView):
+    model = Result
     template_name = "result.html"
-    success_url = reverse_lazy("MainApp:index")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["my_variable"] = "Hello, World!"
+        return context
