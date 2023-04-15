@@ -8,7 +8,7 @@ DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
 translator = deepl.Translator(DEEPL_API_KEY)
 
 
-def translator(text):
+def deepl_translator(text):
     """
     Translators
     
