@@ -1,0 +1,1 @@
+## clip.pyとchat.pyの作成
