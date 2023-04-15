@@ -203,5 +203,10 @@ def chat(context):
     food = chat_food(animal_name)
     area = chat_area(animal_name)
     trivia = chat_trivia(animal_name)
-    knowledge = {name: value for name, value in locals().items() if name == name}
+    knowledge = {
+        "animal_name": animal_name,
+        "food": food,
+        "area": area,
+        "trivia": trivia,
+    }
     return knowledge
