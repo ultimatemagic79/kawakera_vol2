@@ -2,14 +2,36 @@
 
 ![](docs/img/summary.png)
 
+## やること
+### Template
+- レイアウト
+- インターフェース
+- React design
 
-# .envファイルの作成
+### View
+- 写真->CLIP->Text
+- Text->ChatGPT->progres
+- Text間のインターフェース
+- MVTの機能
+
+### Model
+- 何を返す?
+
+### 話題提供
+- 豆知識
+    - 複数
+
+- 生態
+    - 何食べる?
+    - どこに住んでる?
+
+## 環境設定
+## .envファイルの作成
 - .env.exampleを複製して.envという名前に変える
 - POSTGRESという名前がついた環境変数はすべてpostgresという名前に設定する
 - SECRET_KEYを設定する
 
 ## SECRET_KEYを生成する方法
-
 ```
 >>> from django.core.management.utils import get_random_secret_key
 >>> get_random_secret_key()
