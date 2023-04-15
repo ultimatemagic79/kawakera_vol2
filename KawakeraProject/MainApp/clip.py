@@ -1,8 +1,5 @@
 import replicate
 
-# 入力された画像のパス
-img = "/docs/img/dal.jpg"
-
 
 def clip(img):
     """
@@ -17,7 +14,7 @@ def clip(img):
     --------------------------------
     output : string
         画像に対する説明（英文）
-        必要な部分が第1カンマまでだったからそこまで切り取って出力
+        必要な部分が第1カンマまでだったからそこまで切り取って出力するよん.
 
     """
     text = replicate.run(
@@ -31,5 +28,10 @@ def clip(img):
 
 #   テスト
 if __name__ == "__main__":
+    
+    # 入力された画像のパス
+    img = "/docs/img/dal.jpg"
+    
+    # 出力結果（string）
     output = clip(img)
     print(output)
