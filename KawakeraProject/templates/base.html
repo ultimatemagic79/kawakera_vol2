@@ -1,3 +1,4 @@
+<!-- ページで共通するベースとなるものを記述する -->
 {% load static %}
 
 <html lang="ja">
@@ -21,11 +22,40 @@
     <link href="{% static 'css/sp.css' %}" rel="stylesheet"/>
 
     <!-- My style -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}"> -->
     {% block head %}{% endblock %}
 </head>
 
 <body>
+<<<<<<< HEAD
 
+=======
+<div id="wrapper">
+      {% block header%}{% endblock %}
+      {% block contents%}{% endblock %}
+      {% if messages %}
+      <div class="container my-div-style">
+          <div class="row">
+              <ul class="messages" style="list-style: none;">
+                  {% for message in messages %}
+                  <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                      {{ message }}
+                  </li>
+                  {% endfor %}
+              </ul>
+          </div>
+      </div>
+      {% endif %}
+
+      <footer class="py-5 bg-black">
+            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Team KawaKera 2023</p>
+            </div>
+        </footer>
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div id="wrapper">
+>>>>>>> c968724424f6f0ee976bcf35700fbf63d49e29cd
 </body>
 </html>

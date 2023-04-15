@@ -1,76 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}うんこちんこ| Private Diary{% endblock %}
+{% block title %}画像を入力すると解説してくれるサービス | Image Commentary{% endblock %}
 
 {% block header%}
 <header class="masthead text-center text-white">
   <div class="masthead-content">
     <div class="container">
-      <h1 class="masthead-heading mb-0">Private Diary</h1>
-      <h2 class="masthead-subheading mb-0">あなた専用の日記保存サービス</h2>
-      <a href="{% url 'account_login' %}" class="btn btn-primary btn-xl rounded-pill mt-5">LOG IN</a>
+      <h1 class="masthead-heading mb-0">Image Commentary</h1>
+      <h2 class="masthead-subheading mb-0">画像を入力すると解説してくれるサービス（適当）</h2>
     </div>
   </div>
-  <div class="bg-circle-1 bg-circle"></div>
-  <div class="bg-circle-2 bg-circle"></div>
-  <div class="bg-circle-3 bg-circle"></div>
-  <div class="bg-circle-4 bg-circle"></div>
+
 </header>
 {% endblock %}
 
 {% block contents %}
-<section>
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 order-lg-2">
-        <div class="p-5">
-          <img class="img-fluid rounded-circle" src="{% static 'assets/img/portfolio-1.jpg' %}" alt="">
-        </div>
-      </div>
-      <div class="col-lg-6 order-lg-1">
-        <div class="p-5">
-          <h2 class="display-4">Web Diary</h2>
-          <p>Web上で作成/編集/削除ができる日記</p>
-        </div>
-      </div>
-    </div>
+<div class="container my-div-style">
+  <div class="row">
+      <form method="POST" enctype='multipart/form-data'>
+          {% csrf_token %}
+          <table class="table">
+              {{ form.as_table }}
+          </table>
+          <button class="btn btn-primary" type="submit">作成</button>
+      </form>
   </div>
-</section>
+</div>
 
-<section>
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <div class="p-5">
-          <img class="img-fluid rounded-circle" src="{% static 'assets/img/portfolio-2.jpg' %}" alt="">
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="p-5">
-          <h2 class="display-4">Save Your Diary</h2>
-          <p>あなたの日記をWebに保存</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 order-lg-2">
-        <div class="p-5">
-          <img class="img-fluid rounded-circle" src="{% static 'assets/img/portfolio-3.jpg' %}" alt="">
-        </div>
-      </div>
-      <div class="col-lg-6 order-lg-1">
-        <div class="p-5">
-          <h2 class="display-4">Membership System</h2>
-          <p>会員制のWeb日記サービス</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 {% endblock %}
