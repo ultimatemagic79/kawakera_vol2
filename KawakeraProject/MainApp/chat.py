@@ -185,7 +185,7 @@ def chat_knowledge(animal_name):
     question_area = f"Tell us where the {animal_name} live."
     chatgpt.input_message(question_area)
     area = chatgpt.input_list[-1]["content"]
-    question = f"Tell me some trivia about {animal_name}"
+    question_trivia = f"Tell me some trivia about {animal_name}"
     chatgpt.input_message(question_trivia)
     trivia = chatgpt.input_list[-1]["content"]
     knowledge = {
