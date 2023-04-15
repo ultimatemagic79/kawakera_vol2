@@ -1,1 +1,1 @@
-python manage.py migrate MainApp
+python manage.py migrate
