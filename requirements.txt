@@ -5,3 +5,4 @@ Pillow
 tqdm
 flake8
 black
+replicate
