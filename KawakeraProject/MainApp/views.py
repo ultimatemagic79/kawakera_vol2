@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.http import HttpResponse
 
 from .forms import CommentCreateForm
 from .models import Result
@@ -29,6 +30,9 @@ class IndexView(generic.FormView):
     success_url = reverse_lazy("MainApp:result")
 
     def form_valid(self, form):
+        photo = form.cleaned_data['photo']
+        
+        # self.request.session['photo'] = photo
         form.save()
         # input = form["nanka"]
         # img -> clip
@@ -55,4 +59,20 @@ class ResultView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["my_variable"] = "Hello, World!"
+        # context["my_photo"] = self.request.session.get('photo')
         return context
+
+    # def show_image(self, request):
+    #     photo = self.request.session.get('photo')
+    #     if photo:
+    #         if request.session.get('image_format') == 'jpeg':
+    #             content_type = 'image/jpeg'
+    #         elif request.session.get('image_format') == 'png':
+    #             content_type = 'image/png'
+    #         elif request.session.get('image_format') == 'jpg':
+    #             content_type = 'image/jpg'
+    #         else:
+    #             content_type = 'application/octet-stream'
+    #         return HttpResponse(photo, content_type=content_type)
+    #     else:
+    #         return HttpResponse('Image not found')
