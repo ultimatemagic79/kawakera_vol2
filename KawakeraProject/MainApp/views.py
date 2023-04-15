@@ -32,13 +32,15 @@ class IndexView(generic.FormView):
     def form_valid(self, form):
         photo = form.cleaned_data["photo"]
         self.request.session["photo_name"] = photo.name
-        photo_path = osp.abspath(osp.join(__file__, osp.pardir, "static", "media", f'{photo.name}'))
-        
+        photo_path = osp.abspath(
+            osp.join(__file__, osp.pardir, "static", "media", f"{photo.name}")
+        )
+
         form.save()
         # input = form["nanka"]
         # img -> clip
         # context = clip
-        context = image2text()
+        context = image2text(photo_path)
 
         # for
         # context -> chat
