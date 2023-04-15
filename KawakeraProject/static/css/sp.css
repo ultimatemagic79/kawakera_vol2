@@ -11026,7 +11026,7 @@ footer.footer .social-link:hover {
 }
 @media (min-width: 992px) {
   .masthead {
-    height: 100vh;
+    height: 50vh;
   }
   .masthead h1, .masthead .h1 {
     font-size: 5.5rem;
