@@ -120,7 +120,7 @@ def chat_area(animal_name):
 
 # 動物名から豆知識を生成
 def chat_trivia(animal_name):
-    system_setting = r"""\
+    system_setting = """\
         ####Settings###
         You are a scholar who knows animals.
 
@@ -197,7 +197,7 @@ def chat_knowledge(animal_name):
     return knowledge
 
 
-# contextを受け取って動物を推論し生態と豆知識を返す関数
+# contextを受け取って動物を推論し生態と豆知識を返す関数(OpenAIからエラーが帰ってくる．多分アクセス過多)
 def chat(context):
     animal_name = chat_inference(context)
     food = chat_food(animal_name)
