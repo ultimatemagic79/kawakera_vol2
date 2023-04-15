@@ -5,3 +5,5 @@ Pillow
 tqdm
 flake8
 black
+djangorestframework
+django-cors-headers
