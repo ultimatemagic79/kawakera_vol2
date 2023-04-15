@@ -31,6 +31,21 @@ class Chatgpt:
 
 # contextからなんの動物か推論する
 def chat_inference(context):
+    """
+    _summary_ : contextからなんの動物かを推論する関数
+
+    Parameters
+    --------------------------------
+    context : string
+        画像を表現するテキスト
+
+    Returns
+    --------------------------------
+    output : string
+        テキストから推論した動物名
+
+    """
+
     # Chatgptにシステム設定のためのプロンプト
     system_setting = """\
         ####Settings###
@@ -59,6 +74,7 @@ def chat_inference(context):
     chatgpt = Chatgpt(system_setting)
     chatgpt.input_message(context)
     animal_name = chatgpt.input_list[-1]["content"]
+    animal_name = animal_name[8:]
     return animal_name
 
 
