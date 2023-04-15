@@ -16,6 +16,7 @@
             {{result.name}}
             {{result.area}}
             {{result.food}}
+            {{result.mame}}
             <form method="post" action="{% url 'MainApp:result' %}">
               {% csrf_token %}
             <button class="btn btn-primary" type="submit">保存</button>
