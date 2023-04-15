@@ -33,7 +33,7 @@ class IndexView(generic.FormView):
         photo = form.cleaned_data["photo"]
         self.request.session["photo_name"] = photo.name
         photo_path = osp.abspath(
-            osp.join(__file__, osp.pardir, "static", "media", f"{photo.name}")
+            osp.join(__file__, osp.pardir, osp.pardir, "static", "media", f"{photo.name}")
         )
 
         form.save()
