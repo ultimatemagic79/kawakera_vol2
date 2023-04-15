@@ -7,3 +7,5 @@ flake8
 black
 djangorestframework
 django-cors-headers
+replicate
+openai

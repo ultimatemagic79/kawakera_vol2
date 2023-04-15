@@ -9,6 +9,9 @@ COPY . /work
 COPY ./containers/django/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+RUN apt-get update && apt-get install -y nodejs npm
+RUN npm install -g n && n latest
+
 # ユーザー名を指定
 ARG USERNAME=user
 ARG GROUPNAME=user
