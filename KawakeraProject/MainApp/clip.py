@@ -1,8 +1,6 @@
 import replicate
 
 
-
-
 def clip(img):
     """
     _summary_ : 入力画像に対し動物のプロンプトを返す関数
