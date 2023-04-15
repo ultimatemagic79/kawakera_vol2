@@ -1,7 +1,6 @@
 import replicate
 
-# 入力された画像のパス
-img = "/docs/img/dal.jpg"
+
 
 
 def clip(img):
@@ -31,5 +30,10 @@ def clip(img):
 
 #   テスト
 if __name__ == "__main__":
+    
+    # 入力された画像のパス
+    img = "/docs/img/dal.jpg"
+    
+    # 出力結果（string）
     output = clip(img)
     print(output)
