@@ -3752,6 +3752,8 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+  background-color: #fd7e14;
+  height: 50px;
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -11107,4 +11109,8 @@ footer.footer .social-link:hover {
   line-height: 7.5rem;
   font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.top-content{
+  margin-top: 50px;
 }
