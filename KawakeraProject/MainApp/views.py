@@ -1,10 +1,10 @@
 import logging
+import os.path as osp
 
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib import messages
-from django.http import HttpResponse
 
 from .forms import CommentCreateForm
 from .models import Result
@@ -32,6 +32,8 @@ class IndexView(generic.FormView):
     def form_valid(self, form):
         photo = form.cleaned_data["photo"]
         self.request.session["photo_name"] = photo.name
+        photo_path = osp.abspath(osp.join(__file__, osp.pardir, "static", "media", f'{photo.name}'))
+        
         form.save()
         # input = form["nanka"]
         # img -> clip
