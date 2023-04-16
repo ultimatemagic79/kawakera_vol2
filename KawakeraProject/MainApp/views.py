@@ -47,23 +47,23 @@ class IndexView(generic.FormView):
         # img -> clip
         # context = clip
         # context = image2text(photo_path)
-        # animal_name = image_classification(photo_path)
+        animal_name = image_classification(photo_path)
 
         # for
         # context -> chat
         # responses = chat
-        # knowledge = chat_knowledge(animal_name)
+        knowledge = chat_knowledge(animal_name)
 
-        # # translation
-        # knowledge = deepl_translator(knowledge)
+        # translation
+        knowledge = deepl_translator(knowledge)
 
-        # # character converter
-        # knowledge = character_converter(knowledge, "normal")
+        # character converter
+        knowledge = character_converter(knowledge, "normal")
 
         # responses -> result
         # セッションにresponsesを保存する
 
-        knowledge = {"name": "a", "mame": "b", "area": "c", "food": "d"}
+        # knowledge = {"name": "a", "mame": "b", "area": "c", "food": "d"}
         result = Result(
             photo_name=photo.name,
             name=knowledge["name"],
