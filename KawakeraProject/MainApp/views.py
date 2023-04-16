@@ -95,74 +95,74 @@ class IndexView(generic.FormView):
         return context
 
 
-class ResultView(generic.TemplateView):
-    # model = Result
-    template_name = "result.html"
-    # success_url = reverse_lazy("MainApp:index")
-    # pk_url_kwarg = "pk"
+# class ResultView(generic.TemplateView):
+#     # model = Result
+#     template_name = "result.html"
+#     # success_url = reverse_lazy("MainApp:index")
+#     # pk_url_kwarg = "pk"
 
-    # responses -> template
-    # def get(self, request, pk):
-    #     result = Result.objects.get(pk=pk)
-    #     return render(request, "result.html", {"result": result})
-    # context["result"] = result
-    # photo_name = self.request.session.get("photo_name")
-    # name = self.request.session.get("name")
-    # mame = self.request.session.get("mame")
-    # area = self.request.session.get("area")
-    # food = self.request.session.get("food")
+#     # responses -> template
+#     # def get(self, request, pk):
+#     #     result = Result.objects.get(pk=pk)
+#     #     return render(request, "result.html", {"result": result})
+#     # context["result"] = result
+#     # photo_name = self.request.session.get("photo_name")
+#     # name = self.request.session.get("name")
+#     # mame = self.request.session.get("mame")
+#     # area = self.request.session.get("area")
+#     # food = self.request.session.get("food")
 
-    # result = Result(
-    #     photo_name=photo_name, name=name, mame=mame, area=area, food=food
-    # )
+#     # result = Result(
+#     #     photo_name=photo_name, name=name, mame=mame, area=area, food=food
+#     # )
 
-    # result.save()  # モデルのインスタンスを保存
-    # context["photo_name"] = self.photo_name
-    # context["name"] = self.name
-    # context["area"] = self.area
-    # context["food"] = self.food
-    # context["result"] = result
+#     # result.save()  # モデルのインスタンスを保存
+#     # context["photo_name"] = self.photo_name
+#     # context["name"] = self.name
+#     # context["area"] = self.area
+#     # context["food"] = self.food
+#     # context["result"] = result
 
-    # self.request.session.pop("photo_name")
-    # self.request.session.pop("name")
-    # self.request.session.pop("mame")
-    # self.request.session.pop("area")
-    # self.request.session.pop("food")
-    # return context
+#     # self.request.session.pop("photo_name")
+#     # self.request.session.pop("name")
+#     # self.request.session.pop("mame")
+#     # self.request.session.pop("area")
+#     # self.request.session.pop("food")
+#     # return context
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        pk = self.kwargs["pk"]
-        result = Result.objects.get(pk=pk)
-        context["result"] = result
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         pk = self.kwargs["pk"]
+#         result = Result.objects.get(pk=pk)
+#         context["result"] = result
 
-        return context
+#         return context
 
-    # photo_name = self.request.session.get("photo_name")
-    # name = self.request.session.get("name")
-    # mame = self.request.session.get("mame")
-    # area = self.request.session.get("area")
-    # food = self.request.session.get("food")
+#     # photo_name = self.request.session.get("photo_name")
+#     # name = self.request.session.get("name")
+#     # mame = self.request.session.get("mame")
+#     # area = self.request.session.get("area")
+#     # food = self.request.session.get("food")
 
-    # result = Result(
-    #     photo_name=photo_name, name=name, mame=mame, area=area, food=food
-    # )
+#     # result = Result(
+#     #     photo_name=photo_name, name=name, mame=mame, area=area, food=food
+#     # )
 
-    # result.save()  # モデルのインスタンスを保存
-    # context["photo_name"] = self.photo_name
-    # context["name"] = self.name
-    # context["area"] = self.area
-    # context["food"] = self.food
-    # context["result"] = result
+#     # result.save()  # モデルのインスタンスを保存
+#     # context["photo_name"] = self.photo_name
+#     # context["name"] = self.name
+#     # context["area"] = self.area
+#     # context["food"] = self.food
+#     # context["result"] = result
 
-    # self.request.session.pop("photo_name")
-    # self.request.session.pop("name")
-    # self.request.session.pop("mame")
-    # self.request.session.pop("area")
-    # self.request.session.pop("food")
+#     # self.request.session.pop("photo_name")
+#     # self.request.session.pop("name")
+#     # self.request.session.pop("mame")
+#     # self.request.session.pop("area")
+#     # self.request.session.pop("food")
 
-    # indexからresponsesを受け取る
-    # セッションから取り出す
-    def post(self, request, *args, **kwargs):
-        # POSTリクエストの処理
-        return redirect("MainApp:index")
+#     # indexからresponsesを受け取る
+#     # セッションから取り出す
+#     def post(self, request, *args, **kwargs):
+#         # POSTリクエストの処理
+#         return redirect("MainApp:index")
