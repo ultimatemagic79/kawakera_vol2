@@ -1,10 +1,10 @@
 import logging
+import os.path as osp
 
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib import messages
-from django.http import HttpResponse
 
 from .forms import CommentCreateForm
 from .models import Result
@@ -32,14 +32,20 @@ class IndexView(generic.FormView):
     def form_valid(self, form):
         photo = form.cleaned_data["photo"]
         self.request.session["photo_name"] = photo.name
+        photo_path = osp.abspath(
+            osp.join(__file__, osp.pardir, osp.pardir, "static", "media", f"{photo.name}")
+        )
+
         form.save()
         # input = form["nanka"]
         # img -> clip
         # context = clip
+        context = image2text(photo_path)
 
         # for
         # context -> chat
         # responses = chat
+        knowledge = chat_knowledge(context)
 
         # responses -> result
         # セッションにresponsesを保存する
@@ -71,14 +77,16 @@ class ResultView(generic.TemplateView):
         area = self.request.session.get("area")
         food = self.request.session.get("food")
 
-        self.result = Result(
+        result = Result(
             photo_name=photo_name, name=name, mame=mame, area=area, food=food
         )
+
+        result.save()  # モデルのインスタンスを保存
         # context["photo_name"] = self.photo_name
         # context["name"] = self.name
         # context["area"] = self.area
         # context["food"] = self.food
-        context["result"] = self.result
+        context["result"] = result
 
         self.request.session.pop("photo_name")
         self.request.session.pop("name")
@@ -91,7 +99,4 @@ class ResultView(generic.TemplateView):
     # セッションから取り出す
     def post(self, request, *args, **kwargs):
         # POSTリクエストの処理
-        # モデルのインスタンスを作成してDBに保存する
-        self.result.save()  # モデルのインスタンスを保存
-
         return redirect("MainApp:index")
