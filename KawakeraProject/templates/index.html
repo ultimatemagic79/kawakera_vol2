@@ -32,17 +32,22 @@
   </div>
 </div>
 
+<div class="container my-div-style">
+  <h2>生成結果一覧</h2>
 {% comment %} list db {% endcomment %}
 <ul>
   {% for res in results %}
-    <li>
-        {{res.user_id}}
-        <a href="{% url 'MainApp:result' pk=res.pk %}">{{pk}}{{ res.name }}</a>
+    <li class="result_list"> 
+      {{res.user_id}}
+        <a href="{% url 'MainApp:result' pk=res.pk %}">{{ res.name }}</a>
         {% comment %} {{res.pk}}リンクのテキスト{{ res.photo_name }} {% endcomment %}
+        <img class="img-list" src="{% static 'media/' %}{{res.photo_name}}" alt="">
     </li>
+    
   {% endfor %}
 </ul>
 {% comment %} list db {% endcomment %}
+</div>
 
 <script src="{% static "frontend/main.js" %}"></script>
 

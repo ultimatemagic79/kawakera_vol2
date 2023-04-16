@@ -74,7 +74,8 @@ def chat_knowledge(animal_name):
     question_area = f"Tell us where the {animal_name} live."
     chatgpt.input_message(question_area)
     area = chatgpt.input_list[-1]["content"]
-    question_trivia = f"Tell me some trivia about {animal_name}"
+    # question_trivia = f"Tell me some trivia about {animal_name}"
+    question_trivia = f"tell me some interesting tidbits about {animal_name}, The output should be bulleted and each sentence should end with an '\n'."
     chatgpt.input_message(question_trivia)
     trivia = chatgpt.input_list[-1]["content"]
     knowledge = {
