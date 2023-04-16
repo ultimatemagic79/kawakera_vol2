@@ -38,6 +38,11 @@
         {{result.user_id}}
         {{ result.name }}, 
         {{ result.photo_name }}</li>
+  {% for res in results %}
+    <li>{{ res.name }}, 
+        <a href="{% url 'MainApp:result' pk=res.pk %}">{{pk}}リンクのテキスト{{ res.photo_name }}</a>
+        {% comment %} {{res.pk}}リンクのテキスト{{ res.photo_name }} {% endcomment %}
+    </li>
   {% endfor %}
 </ul>
 {% comment %} list db {% endcomment %}
