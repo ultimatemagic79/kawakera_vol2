@@ -75,7 +75,18 @@ def chat_knowledge(animal_name):
     chatgpt.input_message(question_area)
     area = chatgpt.input_list[-1]["content"]
     # question_trivia = f"Tell me some trivia about {animal_name}"
-    question_trivia = f"tell me some interesting tidbits about {animal_name}. Please output only bullet points as the output needs to be concise. The output should be bulleted and each sentence should end with an '\n'."
+    question_trivia = f"""
+    tell me some interesting tidbits about {animal_name}. Please output only bullet points as the output needs to be concise. The output should be bulleted and each sentence should end with an '\n'.
+    Here are some examples
+    - Pandas have a unique thumb-like structure on their front paws that helps them grasp bamboo.'\r\n'
+    - They have a special digestive system that allows them to break down cellulose in bamboo.'\r\n'
+    - Despite their large size and strength, pandas are very good tree climbers.
+    - Pandas are known for their distinctive black and white markings, which help them blend in with their surroundings.'\r\n'
+    - They are classified as a vulnerable species due to habitat loss and low birth rates.
+    - Pandas have a very low reproductive rate, with females only giving birth to one cub every two to three years.'\r\n'
+    - They have a special adaptation in their throat that allows them to vocalize in a way that helps them communicate with other pandas over long distances.'\r\n'
+    - Pandas are considered to be a symbol of peace and friendship in Chinese culture.'\r\n'
+    """
     chatgpt.input_message(question_trivia)
     trivia = chatgpt.input_list[-1]["content"]
     knowledge = {
