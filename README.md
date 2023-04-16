@@ -67,6 +67,12 @@ DJANGO_SECRET_KEY="django-insecure-"
     - 無料版に登録して認証キーを発行
     - 月500,000文字
     - DEEPL_API_KEY=APIキー（""はどっちでもよかったはず，僕はつけてない）
+- Hugging Face
+    - https://huggingface.co/
+    - アカウント作成する
+    - 右上のアイコンからsettings
+    - Access Tokensタブから取得可能
+    - HUGGINGFACE_API_KEY=API_KEY
  
 
 ## 参考
