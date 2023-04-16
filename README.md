@@ -1,6 +1,6 @@
 ## 概要
 
-![](docs/img/summary.png)
+![](docs/img/development.jpg)
 
 ## やること
 - 一回devをmasterにマージしたい
