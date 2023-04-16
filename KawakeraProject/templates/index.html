@@ -37,6 +37,7 @@
 <ul>
   {% for res in results %}
     <li class="result_list"> 
+      {{res.user_id}}
         <a href="{% url 'MainApp:result' pk=res.pk %}">{{ res.name }}</a>
         {% comment %} {{res.pk}}リンクのテキスト{{ res.photo_name }} {% endcomment %}
         <img class="img-list" src="{% static 'media/' %}{{res.photo_name}}" alt="">
