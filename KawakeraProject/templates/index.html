@@ -36,10 +36,16 @@
 <ul>
   {% for res in results %}
     <li class="result_list"> 
-      {{res.user_id}}
-        <a href="{% url 'MainApp:result' pk=res.pk %}">{{ res.name }}</a>
-        {% comment %} {{res.pk}}リンクのテキスト{{ res.photo_name }} {% endcomment %}
+      
+        
         <img class="img-list" src="{% static 'media/' %}{{res.photo_name}}" alt="">
+        <div> 
+          <p>by {{res.user_id}}</p>
+          <a href="{% url 'MainApp:result' pk=res.pk %}">{{ res.name }}</a>
+          <!-- <a href="{% url 'MainApp:result' pk=res.pk %}">ここをクリック</a> -->
+        </div>
+        {% comment %} {{res.pk}}リンクのテキスト{{ res.photo_name }} {% endcomment %}
+        
     </li>
     
   {% endfor %}

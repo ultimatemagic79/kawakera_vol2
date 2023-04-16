@@ -3752,7 +3752,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
-  background-color: #fd7e14;
+  background-color: lightblue;
   height: 50px;
 }
 .navbar > .container,
@@ -3966,6 +3966,7 @@ textarea.form-control-lg {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: var(--bs-navbar-nav-link-padding-x);
     padding-left: var(--bs-navbar-nav-link-padding-x);
+    color: black;
   }
   .navbar-expand-lg .navbar-nav-scroll {
     overflow: visible;
@@ -11112,7 +11113,7 @@ footer.footer .social-link:hover {
 }
 
 .top-content{
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 /* .result_info{
@@ -11153,9 +11154,22 @@ footer.footer .social-link:hover {
   color: #000;
 }
 .img-list{
-  max-width: 50px;
+  max-width: 310px;
 }
 
 .result_list{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.result_list div{
+  margin: 10px;
+  margin-left: 60px;
+  font-size: 33px
+}
+
+.navbar-brand img{
   width: 80%;
 }
