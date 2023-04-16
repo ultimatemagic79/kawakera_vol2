@@ -29,58 +29,6 @@ class Chatgpt:
         )
 
 
-# contextからなんの動物か推論する
-def chat_inference(context):
-    """
-    _summary_ : contextからなんの動物かを推論する関数
-
-    Parameters
-    --------------------------------
-    context : string
-        画像を表現するテキスト
-
-    Returns
-    --------------------------------
-    output : string
-        テキストから推論した動物名
-
-    """
-
-    # Chatgptにシステム設定のためのプロンプト
-    system_setting = """\
-        ####Settings###
-        You are a scholar who knows animals.
-
-        ####Situation###
-        You receive a text from a user that describes an image of an animal
-
-        ####Request###
-        Please use the following format in your response
-        [name]: "animal name"
-        Please determine the animal most likely to be in the image based on the text you received from the user, step by step.
-        Please output the name of the animal you have determined according to the format.
-
-        Here are some examples
-
-        Example 1
-        user:a medium-sized dog breed with a short, white coat covered in black spots
-        assistant: [name] Dalmatian
-
-        Example 2
-        user: a black and white dog standing on top of a grass covered field, a picture by Toyen
-        assistant: [name] Shiba Inu
-        
-        ###Note###
-        The answer absolutly must output only the animal name
-        """
-    # Chatgptクラスのインスタンス
-    chatgpt = Chatgpt(system_setting)
-    chatgpt.input_message(context)
-    animal_name = chatgpt.input_list[-1]["content"]
-    animal_name = animal_name[8:]
-    return animal_name
-
-
 # 動物名から豆知識と食べ物，生態地域，豆知識を生成
 def chat_knowledge(animal_name):
     system_setting = """\
@@ -136,6 +84,58 @@ def chat_knowledge(animal_name):
         "mame": trivia,
     }
     return knowledge
+
+
+# # contextからなんの動物か推論する
+# def chat_inference(context):
+#     """
+#     _summary_ : contextからなんの動物かを推論する関数
+
+#     Parameters
+#     --------------------------------
+#     context : string
+#         画像を表現するテキスト
+
+#     Returns
+#     --------------------------------
+#     output : string
+#         テキストから推論した動物名
+
+#     """
+
+#     # Chatgptにシステム設定のためのプロンプト
+#     system_setting = """\
+#         ####Settings###
+#         You are a scholar who knows animals.
+
+#         ####Situation###
+#         You receive a text from a user that describes an image of an animal
+
+#         ####Request###
+#         Please use the following format in your response
+#         [name]: "animal name"
+#         Please determine the animal most likely to be in the image based on the text you received from the user, step by step.
+#         Please output the name of the animal you have determined according to the format.
+
+#         Here are some examples
+
+#         Example 1
+#         user:a medium-sized dog breed with a short, white coat covered in black spots
+#         assistant: [name] Dalmatian
+
+#         Example 2
+#         user: a black and white dog standing on top of a grass covered field, a picture by Toyen
+#         assistant: [name] Shiba Inu
+
+#         ###Note###
+#         The answer absolutly must output only the animal name
+#         """
+#     # Chatgptクラスのインスタンス
+#     chatgpt = Chatgpt(system_setting)
+#     chatgpt.input_message(context)
+#     animal_name = chatgpt.input_list[-1]["content"]
+#     animal_name = animal_name[8:]
+#     return animal_name
 
 
 # # 動物名から食べるものを生成
