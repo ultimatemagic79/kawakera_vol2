@@ -76,7 +76,7 @@ def chat_knowledge(animal_name):
     area = chatgpt.input_list[-1]["content"]
     # question_trivia = f"Tell me some trivia about {animal_name}"
     question_trivia = f"""
-    tell me some interesting tidbits about {animal_name}. Please output only bullet points as the output needs to be concise. The output should be bulleted and each sentence should end with an '\n'.
+    tell me some interesting tidbits about {animal_name}. Please output only bullet points as the output needs to be concise. The output should be bulleted and each sentence should end with an '\r\n'.
     Here are some examples
     - Pandas have a unique thumb-like structure on their front paws that helps them grasp bamboo.'\r\n'
     - They have a special digestive system that allows them to break down cellulose in bamboo.'\r\n'
