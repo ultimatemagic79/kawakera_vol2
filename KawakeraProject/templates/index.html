@@ -10,7 +10,7 @@
       <!-- <h1 class="masthead-heading mb-0">Animal GO</h1> -->
       <!-- <h1 class="masthead-heading mb-0">画像から動物の生態を教えてくれるサービス</h1> -->
       <!-- <h2 class="masthead-subheading mb-0">画像から動物の生態を教えてくれるサービス</h2> -->
-      <a href="{% url 'account_login' %}" class="btn btn-primary btn-xl rounded-pill mt-5">LOG IN</a>
+      
     </div>
   </div>
 </header>
@@ -18,6 +18,7 @@
 
 {% block contents %}
 <div class="container my-div-style">
+  
   <div class="row">
       <form method="POST" enctype='multipart/form-data'>
           {% csrf_token %}
