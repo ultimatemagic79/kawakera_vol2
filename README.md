@@ -39,6 +39,7 @@
 - .env.exampleを複製して.envという名前に変える
 - POSTGRESという名前がついた環境変数はすべてpostgresという名前に設定する
 - SECRET_KEYを設定する
+- API_KEYを入力する
 
 ## SECRET_KEYを生成する方法
 ```
@@ -49,6 +50,24 @@
 生成した文字列を.envの
 DJANGO_SECRET_KEY="django-insecure-"
 の -django-insecure- の後ろにくっつける
+
+## API_KEYを生成する方法
+- Replicate
+    - https://replicate.com/
+    - Githubのアカウントを登録するとAPIキーが発行される
+    - REPLICATE_API_TOKEN=APIキー（""なし）
+- OPEN_API_KEY
+    - https://openai.com/blog/openai-api
+    - Sign up↗からgoogleログイン
+    - 右上のPersonalからView API
+    - 一度見たら二度と見れなくなるのでどこか(localの.envとか)に保存しておくこと
+    - OPENAI_API_KEY=APIキー
+- DeepL
+    - https://www.deepl.com/ja/pro/change-plan?cta=header-pro-button/#developer
+    - 無料版に登録して認証キーを発行
+    - 月500,000文字
+    - DEEPL_API_KEY=APIキー（""はどっちでもよかったはず，僕はつけてない）
+ 
 
 ## 参考
 - ChatGPT PlayGround, 
