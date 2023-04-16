@@ -70,6 +70,7 @@ class IndexView(generic.FormView):
             mame=knowledge["mame"],
             area=knowledge["area"],
             food=knowledge["food"],
+            user_id=self.request.user.username
         )
         result.save()
 

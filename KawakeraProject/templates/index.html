@@ -34,7 +34,9 @@
 {% comment %} list db {% endcomment %}
 <ul>
   {% for result in results %}
-    <li>{{ result.name }}, 
+    <li>
+        {{result.user_id}}
+        {{ result.name }}, 
         {{ result.photo_name }}</li>
   {% endfor %}
 </ul>
