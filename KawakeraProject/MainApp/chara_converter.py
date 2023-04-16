@@ -1,4 +1,4 @@
-from chat import Chatgpt
+from .chat import Chatgpt
 
 dictionary_character = {
     "gyaru": "受け取った文章をギャルの口調に直してください",
