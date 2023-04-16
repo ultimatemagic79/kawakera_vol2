@@ -7,8 +7,9 @@
 <header class="masthead text-center text-white top-content">
   <div class="masthead-content">
     <div class="container">
-      <h1 class="masthead-heading mb-0">What is this animal?</h1>
-      <h2 class="masthead-subheading mb-0">画像を入力すると動物の詳細情報を教えてくれるサービス</h2>
+      <!-- <h1 class="masthead-heading mb-0">Animal GO</h1> -->
+      <!-- <h1 class="masthead-heading mb-0">画像から動物の生態を教えてくれるサービス</h1> -->
+      <!-- <h2 class="masthead-subheading mb-0">画像から動物の生態を教えてくれるサービス</h2> -->
       <a href="{% url 'account_login' %}" class="btn btn-primary btn-xl rounded-pill mt-5">LOG IN</a>
     </div>
   </div>
@@ -36,8 +37,7 @@
   {% for res in results %}
     <li>
         {{res.user_id}}
-        {{ res.name }}, 
-        <a href="{% url 'MainApp:result' pk=res.pk %}">{{pk}}リンクのテキスト{{ res.photo_name }}</a>
+        <a href="{% url 'MainApp:result' pk=res.pk %}">{{pk}}{{ res.name }}</a>
         {% comment %} {{res.pk}}リンクのテキスト{{ res.photo_name }} {% endcomment %}
     </li>
   {% endfor %}

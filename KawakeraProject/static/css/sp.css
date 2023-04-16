@@ -11016,7 +11016,7 @@ footer.footer .social-link:hover {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg-masthead_1.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/title.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11143,4 +11143,12 @@ footer.footer .social-link:hover {
 
 .m_auto{
   margin: auto;
+}
+
+.masthead-heading{
+  color: #000;
+}
+
+.masthead-subheading{
+  color: #000;
 }

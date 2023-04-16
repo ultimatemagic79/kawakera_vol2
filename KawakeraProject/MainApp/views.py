@@ -25,6 +25,11 @@ def index(request):
 
 def result(request, pk):
     result = Result.objects.get(pk=pk)
+    if request.method == 'POST':
+        return redirect('MainApp:index')
+        
+    
+    
     return render(request, "result.html", context={"result": result})
 
 
