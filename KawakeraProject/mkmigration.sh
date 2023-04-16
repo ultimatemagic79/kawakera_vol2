@@ -1,1 +1,1 @@
-python manage.py makemigrations MainApp
+python manage.py makemigrations

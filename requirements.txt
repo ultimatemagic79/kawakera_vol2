@@ -10,3 +10,5 @@ django-cors-headers
 replicate
 openai
 deepl
+django-allauth
+django-bootstrap5
