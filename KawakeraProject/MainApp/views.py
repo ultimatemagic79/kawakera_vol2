@@ -12,6 +12,7 @@ from .models import Result
 from .chat import *
 from .clip import *
 from .classifier import *
+from .trans import deepl_translator
 from .chara_converter import *
 
 logger = logging.getLogger(__name__)
