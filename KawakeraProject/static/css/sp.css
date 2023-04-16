@@ -11144,3 +11144,11 @@ footer.footer .social-link:hover {
 .m_auto{
   margin: auto;
 }
+
+.img-list{
+  max-width: 50px;
+}
+
+.result_list{
+  width: 80%;
+}
