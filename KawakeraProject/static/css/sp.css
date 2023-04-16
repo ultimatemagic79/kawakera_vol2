@@ -11115,12 +11115,32 @@ footer.footer .social-link:hover {
   margin-top: 50px;
 }
 
+/* .result_info{
+  text-align: center;
+} */
+
 .result_info h2{
   display: flex;
   align-items: center;
 }
 
+.result_info form{
+  text-align: end;
+}
+
+.result_info button{
+  margin: 10px 40px 0 0;
+}
+
 .result_info_span{
   font-size: 40px;
   color: #fcba03;
+}
+
+.tac{
+  text-align: center;
+}
+
+.m_auto{
+  margin: auto;
 }
