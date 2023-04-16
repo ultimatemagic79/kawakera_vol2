@@ -26,6 +26,5 @@ def image_classification(filename):
 
 
 if __name__ == "__main__":
-
     output = image_classification("../docs/img/dal.jpg")
-    print(output[1]['label'])
+    print(output)

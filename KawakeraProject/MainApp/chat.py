@@ -1,6 +1,5 @@
 import openai
 import os
-from .trans import deepl_translator
 
 # OpenAIのAPIキーを取得
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -136,7 +135,6 @@ def chat_knowledge(animal_name):
         "area": area,
         "mame": trivia,
     }
-    knowledge = deepl_translator(knowledge)
     return knowledge
 
 
@@ -239,3 +237,8 @@ def chat_knowledge(animal_name):
 #         "trivia": trivia,
 #     }
 #     return knowledge
+
+
+if __name__ == "__main__":
+    output = chat_knowledge("dalmatian")
+    print(output)
