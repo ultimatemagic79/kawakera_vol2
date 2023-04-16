@@ -10,11 +10,13 @@
 <section>
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-6 order-lg-2">
-          <h1 class="top-content"> 生成結果</h1>
+        <div class="col-lg-8 order-lg-2 m_auto">
+          <h1 class="top-content tac"> 生成結果</h1>
           <div class="result_info">
-            <img class="img-fluid" src="{% static 'media/' %}{{result.photo_name}}" alt="">
             <div>
+              <img class="img-fluid" src="{% static 'media/' %}{{result.photo_name}}" alt="">
+            </div>
+              <div>
               <h2><span class="result_info_span">○</span>名前</h2>
               <p>{{result.name}}</p>
             </div>
