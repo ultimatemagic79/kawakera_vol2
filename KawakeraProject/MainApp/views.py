@@ -11,6 +11,8 @@ from .forms import CommentCreateForm
 from .models import Result
 from .chat import *
 from .clip import *
+from .classifier import *
+from .chara_converter import *
 
 logger = logging.getLogger(__name__)
 
@@ -44,11 +46,18 @@ class IndexView(generic.FormView):
         # img -> clip
         # context = clip
         # context = image2text(photo_path)
+        # animal_name = image_classification(photo_path)
 
         # for
         # context -> chat
         # responses = chat
-        # knowledge = chat_knowledge(context)
+        # knowledge = chat_knowledge(animal_name)
+
+        # # translation
+        # knowledge = deepl_translator(knowledge)
+
+        # # character converter
+        # knowledge = character_converter(knowledge, "normal")
 
         # responses -> result
         # セッションにresponsesを保存する

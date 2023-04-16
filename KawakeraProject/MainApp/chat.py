@@ -1,6 +1,5 @@
 import openai
 import os
-from .trans import deepl_translator
 
 # OpenAIのAPIキーを取得
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -97,20 +96,28 @@ def chat_knowledge(animal_name):
         Here are some examples
 
         Example 1
-        user: What do lions eat?
-        assistant: They eat bamboo shoots and bamboo shoots as well as bamboo shoots and bamboo grass. It has been recorded that it sometimes catches and eats small animals such as insects.
-        user:Where do lions live?
-        assistant:Lions are found in Central Africa (excluding southern South Africa) and northwestern India.
-        user: Please tell us some trivia about lions.
-        assistant: Lions spend most of the day sleeping. Lions originally spend 15 to 20 hours a day sleeping or lying down to relax. The success rate of temporary hunting is 20% to 30%. Hunting is not done every day, but every few days. In zoos, fasting days are set aside in accordance with wild ecology, and food is given every few days.
+        user: Tell me what zebras eat.
+        assistant: Zebras feed primarily on grasses, leaves, twigs, tree bark, and fruit. Because they live in grasslands and savannas, they subsist primarily on grasses. Occasionally, they chew on branches and bark to replenish their nutritional needs. Fruits vary depending on the time of year, but they prefer to eat mangoes, apples, and bananas.
+        user:Tell mr where the zebras live.
+        assistant:Zebras are found in the grasslands and savanna regions of Africa. Specifically, the Masai Mara and Serengeti in East Africa, Kruger National Park in South Africa, and Etosha National Park in Namibia are known as typical habitats.
+        user: Tell us some interesting trivia about zebras.
+        assistant: Zebras are believed to be the fastest runners compared to other herbivores living in the same savanna. Zebras have distinctive black and white stripes on their body surface, and the shape and size of the stripes are known to vary from individual to individual. Some believe that the stripes on zebras have the effect of keeping mosquitoes, flies, and other biting insects away. Zebras live in herds and are known to reciprocate each other's behavior within the herd. It is also believed that when on alert, the entire herd may change direction at once. Zebras are herbivores, feeding primarily on grasses and leaves. Zebras are found over a wide area of the African continent, although their populations are declining in some areas.
 
         Example 2
-        user: Please tell me what giant pandas eat.
-        assistant: They eat large mammals such as zebras, wild boars, gnus, and antelope.
-        user:Please tell us where the giant panda lives.
-        assistant: Giant pandas live in the mountainous forests of Sichuan, Shaanxi, and Gansu provinces in the southwestern part of the People's Republic of China, at altitudes ranging from 1300 to 3500 meters.
-        user: Please tell us some trivia about giant pandas.
-        assistant: Pandas are actually carnivores, and are classified in the Carnivora family. While herbivores have long intestines that are more than 20 times their body length, pandas' intestines are about 4 times their body length. From this point of view, pandas are carnivores. Pandas spend much of the day eating, but only 20% of the bamboo and bamboo grass they eat can be digested. Their eyes are surprisingly sharp and scary. They eat all day long.
+        user: Tell me what lions eat.
+        assistant: They eat bamboo shoots and bamboo shoots as well as bamboo shoots and bamboo grass. It has been recorded that it sometimes catches and eats small animals such as insects.
+        user:Tell mr where the lions live.
+        assistant:Lions are found on the African continent and parts of India. On the African continent, they inhabit a wide range south of the Sahara Desert. Typical habitats include the Serengeti and Masai Mara in East Africa, Kruger National Park in South Africa, and the Okavango Delta in Botswana. In India, they are found in Gujarat, Rajasthan, Madhya Pradesh, Uttar Pradesh, and Himachal Pradesh. However, the Indian lion is globally listed as an endangered species and is currently protected in the Girard Lion Sanctuary in Gujarat.
+        user: Tell us some interesting trivia about lions.
+        assistant: The male lion's mane is known to vary in size and density depending on the individual's health and genetic factors. Lion males are larger and stronger because they are primarily engaged in hunting, but females play an important role in the actual hunting. Most lions are nocturnal and rest during the day. Lions spend roughly nearly 18 hours a day sleeping. The African species of lion is one of the largest cats, while the Indian species is somewhat smaller than the African species. Despite their large size, lions can run at speeds of over 60 kilometers per hour. Compared to other animals, including humans, lions have relatively short body hair, which allows them to better regulate their body temperature during the summer months.
+
+        Example 3
+        user: Tell me what giraffes eat.
+        assistant: Giraffes are herbivores that feed primarily on tree leaves. Giraffes have very long necks that have evolved to reach the leaves of tall trees. Giraffes also occasionally eat tree bark, branches, and fruit. Although giraffes are herbivores, they will sometimes eat the bones of dead animals to replenish their bones and horns as needed.
+        user:Tell mr where the giraffes live.
+        assistant:Giraffes inhabit a wide range of habitats across the African continent. They inhabit a wide range of habitats, from tropical rainforests to savannas, where there are suitable forests and savanna grasslands.
+        user: Tell us some interesting trivia about giraffes.
+        assistant: Giraffes have seven neck bones, the same number as human neck bones, but each bone is more than 45 cm long on average. Giraffes are among the tallest land animals in existence, and can reach a height of 5 to 6 meters as adults. Utilizing their long necks and legs, giraffes can run at speeds of over 60 kilometers per hour. Giraffes are known to sleep for only 30 minutes to an hour at a time, requiring long periods of sleep to avoid nocturnal predator attacks. Compared to other animals sharing the same grasslands, giraffes are relatively calm and sociable, as they face fewer threats from large predators.
         """
     chatgpt = Chatgpt(system_setting)
     question_food = f"Tell us what {animal_name} eat."
@@ -128,106 +135,110 @@ def chat_knowledge(animal_name):
         "area": area,
         "mame": trivia,
     }
-    knowledge = deepl_translator(knowledge)
     return knowledge
 
 
-# 動物名から食べるものを生成
-def chat_food(animal_name):
-    system_setting = """\
-        ####Settings###
-        You are a scholar who knows animals.
-        
-        ####Situation###.
-        A question from a user who is curious about animals about what the animals eat
+# # 動物名から食べるものを生成
+# def chat_food(animal_name):
+#     system_setting = """\
+#         ####Settings###
+#         You are a scholar who knows animals.
 
-        ####Request###.
-        Please answer the user's question.
-        Here are some examples
+#         ####Situation###.
+#         A question from a user who is curious about animals about what the animals eat
 
-        Example 1
-        user: Tell us where the lion live.
-        assistant: Eats large mammals such as zebras, wild boars, gnus, antelopes, etc.
+#         ####Request###.
+#         Please answer the user's question.
+#         Here are some examples
 
-        Example 2
-        user: Tell us where the giant panda live.
-        assistant: They eat bamboo shoots as well as bamboo shoots and bamboo shoots. It has been recorded that they sometimes catch and eat small animals such as insects.
-        """
-    chatgpt = Chatgpt(system_setting)
-    question = "Tell us where the {animal_name} live."
-    chatgpt.input_message(question)
-    food = chatgpt.input_list[-1]["content"]
-    return food
+#         Example 1
+#         user: Tell us where the lion live.
+#         assistant: Eats large mammals such as zebras, wild boars, gnus, antelopes, etc.
 
-
-# 動物名から生態地域を生成
-def chat_area(animal_name):
-    system_setting = """\
-        ####Settings###
-        You are a scholar who knows animals.
-        
-        ####Situation###.
-        A question from a user who is curious about animals about what the animals eat
-
-        ####Request###.
-        Please answer the user's question.
-        Here are some examples
-
-        Example 1
-        user: Tell us what lion eat.
-        assistant: Eats large mammals such as zebras, wild boars, gnus, antelopes, etc.
-
-        Example 2
-        user: Tell us what giant panda eat.
-        assistant: They eat bamboo shoots as well as bamboo shoots and bamboo shoots. It has been recorded that they sometimes catch and eat small animals such as insects.
-        """
-    chatgpt = Chatgpt(system_setting)
-    question = "Tell us what {animal_name} eat."
-    chatgpt.input_message(question)
-    area = chatgpt.input_list[-1]["content"]
-    return area
+#         Example 2
+#         user: Tell us where the giant panda live.
+#         assistant: They eat bamboo shoots as well as bamboo shoots and bamboo shoots. It has been recorded that they sometimes catch and eat small animals such as insects.
+#         """
+#     chatgpt = Chatgpt(system_setting)
+#     question = "Tell us where the {animal_name} live."
+#     chatgpt.input_message(question)
+#     food = chatgpt.input_list[-1]["content"]
+#     return food
 
 
-# 動物名から豆知識を生成
-def chat_trivia(animal_name):
-    system_setting = """\
-        ####Settings###
-        You are a scholar who knows animals.
+# # 動物名から生態地域を生成
+# def chat_area(animal_name):
+#     system_setting = """\
+#         ####Settings###
+#         You are a scholar who knows animals.
 
-        ####Situation###.
-        A user is curious about animals and asks you about animal trivia
+#         ####Situation###.
+#         A question from a user who is curious about animals about what the animals eat
 
-        ####Requirement###
-        Please answer the user's question.
-        Here are some examples
+#         ####Request###.
+#         Please answer the user's question.
+#         Here are some examples
 
-        Example 1
-        user: Tell me some trivia about lions.
-        assistant: Lions spend most of the day sleeping. Lions originally spend 15 to 20 hours a day sleeping or lying down to relax. The success rate of temporary hunting is 20% to 30%. Hunting is not done every day, but every few days. In zoos, fasting days are set aside in accordance with wild ecology, and food is given every few days.
+#         Example 1
+#         user: Tell us what lion eat.
+#         assistant: Eats large mammals such as zebras, wild boars, gnus, antelopes, etc.
 
-        Example 2
-        user: Tell me some trivia about giant pandas.
-        assistant: Pandas are actually carnivores, and are classified in the Carnivora family. While herbivores have long intestines that are more than 20 times their body length, 
-        the panda's intestines are about 4 times its body length. From this point of view, pandas are carnivores. Pandas spend much of the day eating, but only 20% of 
-        the bamboo and bamboo grass they eat can be digested. Their eyes are surprisingly sharp and scary. They eat all day long.
-        """
-    chatgpt = Chatgpt(system_setting)
-    question = "Tell me some trivia about {animal_name}"
-    chatgpt.input_message(question)
-    trivia = chatgpt.input_list[-1]["content"]
-    return trivia
+#         Example 2
+#         user: Tell us what giant panda eat.
+#         assistant: They eat bamboo shoots as well as bamboo shoots and bamboo shoots. It has been recorded that they sometimes catch and eat small animals such as insects.
+#         """
+#     chatgpt = Chatgpt(system_setting)
+#     question = "Tell us what {animal_name} eat."
+#     chatgpt.input_message(question)
+#     area = chatgpt.input_list[-1]["content"]
+#     return area
 
 
-# contextを受け取って動物を推論し生態と豆知識を返す関数(OpenAIからエラーが帰ってくる．多分アクセス過多)
-def chat(context):
-    animal_name = chat_inference(context)
-    food = chat_food(animal_name)
-    area = chat_area(animal_name)
-    trivia = chat_trivia(animal_name)
-    knowledge = {
-        "name": animal_name,
-        "food": food,
-        "area": area,
-        "trivia": trivia,
-    }
-    return knowledge
+# # 動物名から豆知識を生成
+# def chat_trivia(animal_name):
+#     system_setting = """\
+#         ####Settings###
+#         You are a scholar who knows animals.
+
+#         ####Situation###.
+#         A user is curious about animals and asks you about animal trivia
+
+#         ####Requirement###
+#         Please answer the user's question.
+#         Here are some examples
+
+#         Example 1
+#         user: Tell me some trivia about lions.
+#         assistant: Lions spend most of the day sleeping. Lions originally spend 15 to 20 hours a day sleeping or lying down to relax. The success rate of temporary hunting is 20% to 30%. Hunting is not done every day, but every few days. In zoos, fasting days are set aside in accordance with wild ecology, and food is given every few days.
+
+#         Example 2
+#         user: Tell me some trivia about giant pandas.
+#         assistant: Pandas are actually carnivores, and are classified in the Carnivora family. While herbivores have long intestines that are more than 20 times their body length,
+#         the panda's intestines are about 4 times its body length. From this point of view, pandas are carnivores. Pandas spend much of the day eating, but only 20% of
+#         the bamboo and bamboo grass they eat can be digested. Their eyes are surprisingly sharp and scary. They eat all day long.
+#         """
+#     chatgpt = Chatgpt(system_setting)
+#     question = "Tell me some trivia about {animal_name}"
+#     chatgpt.input_message(question)
+#     trivia = chatgpt.input_list[-1]["content"]
+#     return trivia
+
+
+# # contextを受け取って動物を推論し生態と豆知識を返す関数(OpenAIからエラーが帰ってくる．多分アクセス過多)
+# def chat(context):
+#     animal_name = chat_inference(context)
+#     food = chat_food(animal_name)
+#     area = chat_area(animal_name)
+#     trivia = chat_trivia(animal_name)
+#     knowledge = {
+#         "name": animal_name,
+#         "food": food,
+#         "area": area,
+#         "trivia": trivia,
+#     }
+#     return knowledge
+
+
+if __name__ == "__main__":
+    output = chat_knowledge("dalmatian")
+    print(output)

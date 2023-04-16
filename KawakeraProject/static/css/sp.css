@@ -133,7 +133,7 @@ h2, .h2 {
 }
 @media (min-width: 1200px) {
   h2, .h2 {
-    font-size: 2rem;
+    font-size: 22px;
   }
 }
 
@@ -11113,4 +11113,14 @@ footer.footer .social-link:hover {
 
 .top-content{
   margin-top: 50px;
+}
+
+.result_info h2{
+  display: flex;
+  align-items: center;
+}
+
+.result_info_span{
+  font-size: 40px;
+  color: #fcba03;
 }
