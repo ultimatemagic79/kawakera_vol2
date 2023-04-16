@@ -70,6 +70,9 @@ def chat_inference(context):
         Example 2
         user: a black and white dog standing on top of a grass covered field, a picture by Toyen
         assistant: [name] Shiba Inu
+        
+        ###Note###
+        The answer absolutly must output only the animal name
         """
     # Chatgptクラスのインスタンス
     chatgpt = Chatgpt(system_setting)
@@ -123,7 +126,7 @@ def chat_knowledge(animal_name):
         "name": animal_name,
         "food": food,
         "area": area,
-        "trivia": trivia,
+        "mame": trivia,
     }
     knowledge = deepl_translator(knowledge)
     return knowledge

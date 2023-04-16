@@ -50,7 +50,7 @@ class IndexView(generic.FormView):
         # responses -> result
         # セッションにresponsesを保存する
 
-        a = {"name": "ぱんだ", "mame": "でかい", "area": "中国", "food": "笹"}
+        a = knowledge
         name = a["name"]
         mame = a["mame"]
         area = a["area"]

@@ -20,6 +20,7 @@ def deepl_translator(dictionary):
     -------
     output : dictionary {key:value}(Japanese)
     """
+
     for key in dictionary:
-        dictionary[key] = translator.translate_text(dictionary[key], target_lang='JA')
+        dictionary[key] = str(translator.translate_text(dictionary[key], target_lang='JA'))
     return dictionary
