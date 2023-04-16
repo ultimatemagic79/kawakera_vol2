@@ -30,6 +30,15 @@
   </div>
 </div>
 
+{% comment %} list db {% endcomment %}
+<ul>
+  {% for result in results %}
+    <li>{{ result.name }}, 
+        {{ result.photo_name }}</li>
+  {% endfor %}
+</ul>
+{% comment %} list db {% endcomment %}
+
 <script src="{% static "frontend/main.js" %}"></script>
 
 {% endblock %}

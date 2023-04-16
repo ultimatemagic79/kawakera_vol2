@@ -17,10 +17,10 @@
             <p>{{result.area}}</p>
             <p>{{result.food}}</p>
             <p>{{result.mame}}</p>
-            <form method="post" action="{% url 'MainApp:result' %}">
+            {% comment %} <form method="post" action="{% url 'MainApp:result' %}">
               {% csrf_token %}
-            <button class="btn btn-primary" type="submit">保存</button>
-            </form>
+            <button class="btn btn-primary" type="submit">戻る</button>
+            </form> {% endcomment %}
           </div>
         </div>
       </div>
