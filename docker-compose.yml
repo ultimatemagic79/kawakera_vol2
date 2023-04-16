@@ -37,18 +37,16 @@ services:
     # コンテナ内の環境変数を.envを使って設定
     env_file:
       - .env
-
-  
-  front:
-    build:
-      context: .
-      dockerfile: containers/react/Dockerfile
-    restart: always
-    volumes:
-      - ./node:/usr/src/app:cached
-    command: sh -c "cd KawakeraProject && yarn start"
-    ports:
-      - "3000:3000"
+  # front:
+  #   build:
+  #     context: .
+  #     dockerfile: containers/react/Dockerfile
+  #   restart: always
+  #   volumes:
+  #     - ./node:/usr/src/app:cached
+  #   command: sh -c "cd KawakeraProject && yarn start"
+  #   ports:
+  #     - "3000:3000"
 
 
 volumes:
