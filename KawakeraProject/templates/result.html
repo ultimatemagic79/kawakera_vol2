@@ -32,10 +32,6 @@
               <h2><span class="result_info_span">○</span>豆知識</h2>
               <p>{{result.mame}}</p>
             </div>
-            <form method="post" action="{% url 'MainApp:result' %}">
-              {% csrf_token %}
-            <button class="btn btn-primary" type="submit">戻る</button>
-            </form> 
           </div>
         </div>
       </div>
