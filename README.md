@@ -1,5 +1,5 @@
 ## Top Page
-![](docs/img/title.jpg)
+![](docs/img/title.png)
 ## 概要
 
 ![](docs/img/development.jpg)
